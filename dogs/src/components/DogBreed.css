@@ -1,19 +1,15 @@
-.wars-card {
+.dog-card {
     background: #fff;
     border-radius: 2px;
     display: flex;
-    max-height: 200px;
+    /* max-height: 200px; */
+    height:200px;
     margin: 1rem;
     padding: 1rem;
-    width: 400px;
+    width: 150px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
   
   img {
-    width: 30%;
-  }
-
-  .wars-info {
-    text-align: start;
-    padding-left: 24px;
+    width: 100%;
   }

@@ -1,20 +1,21 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import EachDogBreed from './components/EachDogBreed'
 import './App.css';
-import EachstarwarsChars from './components/EachstarwarsChars'
 
 class App extends Component {
-  constructor() {
+
+  constructor(){
     super();
     this.state = {
-      starwarsChars: []
+      dogsBreeds:[],
     };
   }
 
   componentDidMount() {
-    this.getCharacters('https://swapi.co/api/people/');
+    this.getBreeds('https://dog.ceo/api/breed/hound/images');
   }
 
-  getCharacters = URL => {
+  getBreeds = URL => {
     // feel free to research what this code is doing.
     // At a high level we are calling an API to fetch some starwars data from the open web.
     // We then take that data and resolve it our state.
@@ -23,26 +24,26 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
-        this.setState({ starwarsChars: data.results });
+        this.setState({ dogsBreeds: data.message });
       })
       .catch(err => {
         throw new Error(err);
       });
   };
 
-  render() {
+  render(){
     return (
       <div className="App">
-        <h1 className="Header">React Wars</h1>
+        <h1>Dogs</h1>
         <div className = 'class-list'>
-          {this.state.starwarsChars.map(starwarsChar =>(
-            <EachstarwarsChars charProp = {starwarsChar} />
+          {this.state.dogsBreeds.map(dogBreed =>(
+            <EachDogBreed dogProp = {dogBreed} />
           )
             )}
         </div>
       </div>
     );
   }
-}
+  }
 
 export default App;
