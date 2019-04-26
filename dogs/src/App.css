@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+}
+
+.class-list {
+  display: flex;
+  flex-flow: wrap;
+  margin:0 20px;
+  /* align-items: center; */
+}
